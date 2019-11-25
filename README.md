@@ -1,3 +1,3 @@
 # Kappersproject
 
-Open de 'home.html'
+Open de 'index.html'
