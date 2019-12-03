@@ -76,11 +76,26 @@ var firebaseConfig = {
     appId: "1:774267815385:web:3789d91aa09abe868e45c8",
     measurementId: "G-718BSVBQ2M"
   };
-//Initialize Firebase
+    //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-var database = firebase.database();
 
-var titel = document.getElementById("titel");
+//id's
+const dateID = document.getElementById("vandaag");
+const barberID = document.getElementById("kappers");
+const timeID = document.getElementById("selecterTime");
+const nameID = document.getElementById("naampie");
+const emailID = document.getElementById("email");
+const btnID = document.getElementById("submitBtn");
 
-var dbRef = databse.ref().child("text");
-dbRef.on("value", snap => titel.innerText = snap.val());
+const database = firebase.database();
+const rootRef = database.ref("/afspraken/");
+// from tutorial:
+
+btnID.addEventListener("click", (e) => {
+    e.preventDefault();
+    rootRef.child(dateID.value).child(barberID.value).child(timeID.value).set({
+        naam: nameID.value,
+        email: emailID.value
+    });
+    console.log("Afspraak gemaakt");
+});
