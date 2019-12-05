@@ -89,13 +89,25 @@ const btnID = document.getElementById("submitBtn");
 
 const database = firebase.database();
 const rootRef = database.ref("/afspraken/");
-// from tutorial:
 
+// click button afspraak maken
 btnID.addEventListener("click", (e) => {
     e.preventDefault();
-    rootRef.child(dateID.value).child(barberID.value).child(timeID.value).set({
-        naam: nameID.value,
-        email: emailID.value
+    //check of er al een afspraak staat
+    rootRef.child(dateID.value).child(barberID.value).child(timeID.value).once('value', function(snapshot) {
+        if (snapshot.exists()) {
+            //er staat al een afspraak dus doe niks
+            console.log('exists');
+            alert("Er staat al een afspraak op dit moment")
+        }else{
+            //er staat nog geen afspraak dus maak er een
+            console.log("doesnt exist");
+            rootRef.child(dateID.value).child(barberID.value).child(timeID.value).set({
+                naam: nameID.value,
+                email: emailID.value
+                
+            });
+            alert("afspraak gemaakt");
+        };
     });
-    console.log("Afspraak gemaakt");
 });
