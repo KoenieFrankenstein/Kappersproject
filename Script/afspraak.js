@@ -17,7 +17,7 @@ var datefunc = date.attributes.onchange
 var number = 0;
 submitBtn.setAttribute("disabled", true);
 
-//shit laten zien op juiste moment
+//zorgen dat de inputs pas tevoorschijn komen als de vorige is ingevult
 function next(){
     number = number + 1;
     console.log(number);
@@ -43,15 +43,13 @@ function next(){
         setTimeout(notDisable, 10);
     }
 }
-//button pas laten werken na invullen
+
+//button pas laten werken na invullen, anders ging hij al door als je op enter drukte bij laatste input
 function notDisable(){
     document.getElementById("submitBtn").removeAttribute("disabled");
 }
 
-//setDate();
-today = yyyy + "-" + mm + "-" + dd;
-document.getElementById("vandaag").setAttribute("min", today);
-
+//zorg dat de data in database klopt voor fromaat dd-mm-yyyy
 function setDate(){
     if(dd < 10){
         dd = "0" + dd;
@@ -64,7 +62,7 @@ function setDate(){
     document.getElementById("vandaag").setAttribute("value", today);
     document.getElementById("vandaag").setAttribute("min", today);
 }
-
+setDate();
 //Firebase stuff
 var firebaseConfig = {
     apiKey: "AIzaSyBRsyzK6_3gNIs7CEev3ARrc0hPDG2pSnE",
@@ -76,10 +74,36 @@ var firebaseConfig = {
     appId: "1:774267815385:web:3789d91aa09abe868e45c8",
     measurementId: "G-718BSVBQ2M"
   };
-    //Initialize Firebase
+//Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 //id's
+
+ //const geenVoorkeur = document.getElementById("geenVoorkeur");
+const ken = document.getElementById("ken");
+const barbie = document.getElementById("barbie");
+const samson = document.getElementById("samson");
+const gert = document.getElementById("gert");
+
+//id's van opions tijden
+const nine = document.getElementById("9u");
+const nine30 = document.getElementById("9u30");
+const ten = document.getElementById("10u");
+const ten30 = document.getElementById("10u30");
+const eleven = document.getElementById("11u");
+const eleven30 = document.getElementById("11u30");
+const twelve = document.getElementById("12u");
+const twelve30 = document.getElementById("12u30");
+const two = document.getElementById("14u");
+const two30 = document.getElementById("14u30");
+const three = document.getElementById("15u");
+const three30 = document.getElementById("15u30");
+const four = document.getElementById("16u");
+const four30 = document.getElementById("16u30");
+const five = document.getElementById("17u");
+const five30 = document.getElementById("17u30");
+
+//id's van inputs
 const dateID = document.getElementById("vandaag");
 const barberID = document.getElementById("kappers");
 const timeID = document.getElementById("selecterTime");
@@ -102,12 +126,23 @@ btnID.addEventListener("click", (e) => {
         }else{
             //er staat nog geen afspraak dus maak er een
             console.log("doesnt exist");
-            rootRef.child(dateID.value).child(barberID.value).child(timeID.value).set({
-                naam: nameID.value,
-                email: emailID.value
-                
-            });
-            alert("afspraak gemaakt");
+            if(timeID.value == "Kies een tijd"){
+                alert("Kies en tijd!");
+            }else{
+                rootRef.child(dateID.value).child(barberID.value).child(timeID.value).set({
+                    naam: nameID.value,
+                    email: emailID.value
+                });
+                alert("afspraak gemaakt");
+            };
         };
     });
+});
+
+rootRef.child(dateID.value).child(barberID.value).child(timeID.value).once('value', function(snapshot) {
+    if (snapshot.exists()) {
+        console.log("nope");
+    }else{
+        console.log("jup")
+    };
 });
