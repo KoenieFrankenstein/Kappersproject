@@ -1,15 +1,26 @@
-*{
-    padding: 0px;
-    margin: 0px;
-}
-.intro{
-    color: black;
-    text-align: center;
+.intro h3{
+    color: rgb(37, 36, 36);
+    text-align: left;
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 5px;
-    margin-left: 20;
-    margin-Right: 20;
+    margin-left: 200px;
+    margin-Right: 200px;
+}
+.intro p{
+    color: rgb(37, 36, 36);
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 200px;
+    margin-Right: 200px;
+}
+.afbeelding{
+    width: 33%;
+    height: 10%;
 }

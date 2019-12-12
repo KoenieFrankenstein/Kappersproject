@@ -40,4 +40,6 @@
 .Gmap{
     padding: 2px;
     border: 3px solid #35424a;
+    height: 50%;
+    width: 100%;
 }
