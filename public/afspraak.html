@@ -16,15 +16,15 @@
     </div>
 
     <div class="divInputs">
-        <form>
+        <form method="POST" action="reserveren">
             <table class="inputsTable">
                 <tr id="datum" style="display: table;">
                     <td><label for="datePicker" class="Labels">Datum: </label> <br> <br> <br> </td>
-                    <td><input onchange="next()" type="date" class="inputs" id="vandaag" required> <br> <br> <br> </td>
+                    <td><input onchange="next()" type="date" class="inputs" id="vandaag" name="vandaag" required> <br> <br> <br> </td>
                 </tr>
                 <tr id="barber" style="display: none;">
                     <td><label for="barberPicker" class="Labels">Voorkeur voor kapper: </label> <br> <br> <br> </td>
-                    <td><select class="inputs" onchange="next()" required id="kappers">
+                    <td><select class="inputs" onchange="next()" required id="kappers" name="kappers">
                             <option>Kies een kapper</option>
                             <option id="geenVoorkeur">Geen voorkeur</option>
                             <option id="ken">Ken</option>
@@ -35,7 +35,7 @@
                 </tr>
                 <tr id="time" style="display: none;">
                     <td><label for="tijdenPicker">Tijd: </label> <br> <br> <br> </td>
-                    <td><select class="inputs" onchange="next()"required id="selecterTime">
+                    <td><select class="inputs" onchange="next()"required id="selecterTime" name="selectorTime">
                             <option>Kies een tijd</option>
                             <option id="9u">9:00</option>
                             <option id="9u30">9:30</option>
@@ -58,11 +58,11 @@
                 </tr>
                 <tr id="naam" style="display: none;">
                     <td><label for="nameInput" class="Labels">Voornaam + achternaam: </label> <br> <br> <br> </td>
-                    <td><input type="name" class="inputs" required placeholder="Voornaam Achternaam" onchange="next()" id="naampie"> <br> <br> <br> </td>
+                    <td><input type="name" class="inputs" required placeholder="Voornaam Achternaam" onchange="next()" id="naampie" name="naampie"> <br> <br> <br> </td>
                 </tr>
                 <tr id="mail" style="display: none;">
                     <td><label for="mailInput" class="Labels">Email: </label> <br> <br> <br> </td>
-                    <td><input type="email" class="inputs" required placeholder="email@example.com" onchange="next()" id="email"> <br> <br> <br> </td>
+                    <td><input type="email" class="inputs" required placeholder="email@example.com" onchange="next()" id="email" name="email"> <br> <br> <br> </td>
                 </tr>
                 <tr id="submit" style="display: none;">
                     <td> <br> <br> <br> </td>
