@@ -31,7 +31,7 @@ function next(){
     }
     if(number == 3){
         naam.style.display="table";
-        document.getElementById("selecterTime").removeAttribute("onchange");
+        document.getElementById("selectorTime").removeAttribute("onchange");
     }
     if(number == 4){
         mail.style.display="table";
@@ -63,38 +63,3 @@ function setDate(){
     document.getElementById("vandaag").setAttribute("min", today);
 }
 setDate();
-
-//id's
-
-// const geenVoorkeur = document.getElementById("geenVoorkeur");
-// const ken = document.getElementById("ken");
-// const barbie = document.getElementById("barbie");
-// const samson = document.getElementById("samson");
-// const gert = document.getElementById("gert");
-
-//id's van opions tijden
-// const nine = document.getElementById("9u");
-// const nine30 = document.getElementById("9u30");
-// const ten = document.getElementById("10u");
-// const ten30 = document.getElementById("10u30");
-// const eleven = document.getElementById("11u");
-// const eleven30 = document.getElementById("11u30");
-// const twelve = document.getElementById("12u");
-// const twelve30 = document.getElementById("12u30");
-// const two = document.getElementById("14u");
-// const two30 = document.getElementById("14u30");
-// const three = document.getElementById("15u");
-// const three30 = document.getElementById("15u30");
-// const four = document.getElementById("16u");
-// const four30 = document.getElementById("16u30");
-// const five = document.getElementById("17u");
-// const five30 = document.getElementById("17u30");
-
-//id's van inputs
-// const dateID = document.getElementById("vandaag");
-// const barberID = document.getElementById("kappers");
-// const timeID = document.getElementById("selecterTime");
-// const nameID = document.getElementById("naampie");
-// const emailID = document.getElementById("email");
-// const btnID = document.getElementById("submitBtn");
-

@@ -20,13 +20,12 @@
             <table class="inputsTable">
                 <tr id="datum" style="display: table;">
                     <td><label for="datePicker" class="Labels">Datum: </label> <br> <br> <br> </td>
-                    <td><input onchange="next()" type="date" class="inputs" id="vandaag" name="vandaag" required> <br> <br> <br> </td>
+                    <td><input onchange="next()" oninput="dbCheck()" type="date" class="inputs" id="vandaag" name="vandaag" required> <br> <br> <br> </td>
                 </tr>
                 <tr id="barber" style="display: none;">
                     <td><label for="barberPicker" class="Labels">Voorkeur voor kapper: </label> <br> <br> <br> </td>
-                    <td><select class="inputs" onchange="next()" required id="kappers" name="kappers">
+                    <td><select class="inputs" onchange="next()" oninput="dbCheck()" required id="kappers" name="kappers">
                             <option>Kies een kapper</option>
-                            <option id="geenVoorkeur">Geen voorkeur</option>
                             <option id="ken">Ken</option>
                             <option id="barbie">Barbie</option>
                             <option id="samson">Samson</option>
@@ -35,25 +34,25 @@
                 </tr>
                 <tr id="time" style="display: none;">
                     <td><label for="tijdenPicker">Tijd: </label> <br> <br> <br> </td>
-                    <td><select class="inputs" onchange="next()"required id="selecterTime" name="selectorTime">
+                    <td><select class="inputs" onchange="next()" oninput="dbCheck()" required id="selectorTime" name="selectorTime">
                             <option>Kies een tijd</option>
-                            <option id="9u">9:00</option>
-                            <option id="9u30">9:30</option>
-                            <option id="10u">10:00</option>
-                            <option id="10u30">10:30</option>
-                            <option id="11u">11:00</option>
-                            <option id="11u30">11:30</option>
-                            <option id="12u">12:00</option>
-                            <option id="12u30">12:30</option>
+                            <option id="9:00">9:00</option>
+                            <option id="9:30">9:30</option>
+                            <option id="10:00">10:00</option>
+                            <option id="10:30">10:30</option>
+                            <option id="11:00">11:00</option>
+                            <option id="11:30">11:30</option>
+                            <option id="12:00">12:00</option>
+                            <option id="12:30">12:30</option>
                             <option disabled="true">Pauze</option>
-                            <option id="14u">14:00</option>
-                            <option id="14u30">14:30</option>
-                            <option id="15u">15:00</option>
-                            <option id="15u30">15:30</option>
-                            <option id="16u">16:00</option>
-                            <option id="16u30">16:30</option>
-                            <option id="17u">17:00</option>
-                            <option id="17u30">17:30</option>   
+                            <option id="14:00">14:00</option>
+                            <option id="14:30">14:30</option>
+                            <option id="15:00">15:00</option>
+                            <option id="15:30">15:30</option>
+                            <option id="16:00">16:00</option>
+                            <option id="16:30">16:30</option>
+                            <option id="17:00">17:00</option>
+                            <option id="17:30">17:30</option>   
                         </select> <br> <br> <br> </td>
                 </tr>
                 <tr id="naam" style="display: none;">
@@ -74,6 +73,7 @@
     </div>
 
     <script src="script/afspraak.js"></script>
+    <script src="script/dbScript.js"></script>
     <link rel="stylesheet" href="style/afspraak.css">
     <link rel="stylesheet" href="style/master.css">
 </body>

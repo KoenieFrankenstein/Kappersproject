@@ -2,21 +2,6 @@ const router = require('express').Router();
 var NoSQL = require('nosql');
 var db = NoSQL.load('./local.db.nosql');
 
-router.get('/api/hello', (req, res) => {
-    const obj = {
-        foo: 'bar'
-    };
-
-    db.insert({
-        name: 'New user',
-        email: 'new@example.com',
-        password: 'foobar'
-    });
-
-    res.json(obj);
-    
-});
-
 router.post('/reserveren', (req, res) => {
 
     var vandaag = req.body.vandaag;
@@ -36,5 +21,14 @@ router.post('/reserveren', (req, res) => {
     res.redirect("/index.html");
 
 })
+
+router.get('/dbCheck', (req, res) => {
+    
+    db.find().make(function(filter) {
+        filter.callback(function(err, response) {
+            res.json({ response })
+        });
+    });
+});
 
 module.exports = router;
