@@ -11,7 +11,6 @@ function dbCheck() {
             var timesArray = [];
             var tijdenArray = [];
             var pickTime = document.getElementById("pickTime");
-
             pickTime.selected = "Selected";
 
             selector.forEach(tijdenEnable);
