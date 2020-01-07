@@ -33,7 +33,7 @@ router.post('/reserveren', (req, res) => {
         email: email,
     }); 
 
-    res.redirect("index.html");
+    res.redirect("/index.html");
 
 })
 
