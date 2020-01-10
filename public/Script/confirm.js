@@ -9,6 +9,8 @@ var day = date.split("-")[2];
 var month = date.split("-")[1];
 var year = date.split("-")[0];
 
+//data goed neerzetten
+
 if (day.charAt(0) == 0) {
     if (day == 01) {
         day = 1;
@@ -81,6 +83,8 @@ function defineMonth() {
 
 afspraakDatum = day + " " + month + " " + year;
 
+//gegevens neerpleuren
+
 var datum = document.getElementById("datum");
 var kapper = document.getElementById("kapper");
 var tijd = document.getElementById("tijd");
@@ -91,4 +95,7 @@ datum.innerHTML = afspraakDatum;
 kapper.innerHTML = barber;
 tijd.innerHTML = time;
 naam.innerHTML = name;
-mail.innerHTML = email;
+
+var bedankMail = document.getElementById("bedankje");
+
+bedankMail.innerHTML = bedankMail.innerHTML + email;
