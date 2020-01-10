@@ -18,7 +18,7 @@ router.post('/reserveren', (req, res) => {
         email: email,
     }); 
 
-    res.redirect("/confirm.html?date=" + vandaag + "&barber" + kapper + "&time" + tijd + "&name" + naam + "&email" + email);
+    res.redirect("/confirm.html?date=" + vandaag + "&barber=" + kapper + "&time=" + tijd + "&name=" + naam + "&email=" + email);
 
 })
 
