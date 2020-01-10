@@ -5,32 +5,35 @@
     font-size: 25px;
 }
 .collums{
-    float: left;
-    margin-left: 32%;
-    margin-top: 50px;
-    width: 35%;
+    margin-left: 30%;
+    width: 40%;
     padding: 10px;
-}
-.head{
-    font-size: 25px;
-    border-bottom: 1px solid rgb(255, 180, 40);
-    font-weight: bold;
-    padding: 5px;
-}
-.type{
+
     list-style-type: none;
     border: 1px solid rgb(255, 180, 40);
     background-color: #35424a;
     font-family: sans-serif;
     color: white;
     font-size: 20px;
+}
+.head{
+    font-size: 25px;
+    border-bottom: 1px solid rgb(255, 180, 40);
+    font-weight: bold;
     padding: 5px;
+    margin-bottom: 10px;
 }
 .value{
     text-align: left;
     margin-left: 30px;
-    width: 800%;
+    margin-bottom: -10px;
 }
 .var{
     text-align: left;
+    border-right: solid rgb(255, 180, 40) 1px;
+    padding-right: 10px;
+    border-collapse: collapse;
+}
+table{
+    border-collapse: collapse;
 }
