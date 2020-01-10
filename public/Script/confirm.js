@@ -80,3 +80,9 @@ function defineMonth() {
 }
 
 datum = day + " " + month + " " + year;
+
+var datum = document.getElementById("datum");
+var kapper = document.getElementById("kapper");
+var tijd = document.getElementById("tijd");
+var naam = document.getElementById("naam");
+var email = document.getElementById("email");
