@@ -27,6 +27,13 @@ body{
     text-decoration: none;
     color: rgb(255, 180, 40);
 }
+#page-container {
+    position: relative;
+    min-height: 100vh;
+} 
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
 .footer{
     background-color: #35424a;
     position: absolute;
@@ -40,4 +47,7 @@ body{
     font-size: 15px;
     color: rgb(255, 180, 40);
     text-align: center;   
+}
+.space{
+    margin-top: 75px;
 }

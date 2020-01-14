@@ -8,87 +8,96 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1 class="title">Barbie Barbers</h1>
-        <h3 class="link"><a class="link" href="contact.html">Contact</a></h3>
-        <h3 class="link"><a class="link" href="afspraak.html">Reserveren</a></h3>
-        <h3 class="link"><a class="link" href="prijzen.html">Prijzen</a></h3>
-        <h3 class="link"><a class="link" href="index.html">Home</a></h3>
-    </div>
+    <div id="page-container">
+        <div id="content-wrap">
+            <div class="header">
+                <h1 class="title">Barbie Barbers</h1>
+                <h3 class="link"><a class="link" href="contact.html">Contact</a></h3>
+                <h3 class="link"><a class="link" href="afspraak.html">Reserveren</a></h3>
+                <h3 class="link"><a class="link" href="prijzen.html">Prijzen</a></h3>
+                <h3 class="link"><a class="link" href="index.html">Home</a></h3>
+            </div>
 
-    <div>
-        <br><br>
-        <p class="bellen">U kunt ons ook telefonisch bereiken tijdens de openingstijden om een afspraak te maken.</p>
+            <div>
+                <br><br>
+                <p class="bellen">U kunt ons ook telefonisch bereiken tijdens de openingstijden om een afspraak te
+                    maken.</p>
+            </div>
+            <div class="divInputs">
+                <form method="POST" action="/reserveren">
+                    <table class="inputsTable">
+                        <tr id="datum" style="display: table;">
+                            <td><label for="datePicker" class="Labels">Datum: </label> <br> <br> <br> </td>
+                            <td><input onchange="next()" oninput="dbCheck()" type="date" class="inputs" id="vandaag"
+                                    name="vandaag" required> <br> <br> <br> </td>
+                        </tr>
+                        <tr id="barber" style="display: none;">
+                            <td><label for="barberPicker" class="Labels">Voorkeur voor kapper: </label> <br> <br> <br>
+                            </td>
+                            <td><select class="inputs" onchange="next()" oninput="dbCheck()" required id="kappers"
+                                    name="kappers">
+                                    <option>Kies een kapper</option>
+                                    <option id="ken">Ken</option>
+                                    <option id="barbie">Barbie</option>
+                                    <option id="samson">Samson</option>
+                                    <option id="gert">Gert</option>
+                                </select> <br> <br> <br> </td>
+                        </tr>
+                        <tr id="time" style="display: none;">
+                            <td><label for="tijdenPicker">Tijd: </label> <br> <br> <br> </td>
+                            <td><select class="inputs" onchange="next()" required id="selectorTime" name="selectorTime">
+                                    <option id="pickTime">Kies een tijd</option>
+                                    <option id="9:00">9:00</option>
+                                    <option id="9:30">9:30</option>
+                                    <option id="10:00">10:00</option>
+                                    <option id="10:30">10:30</option>
+                                    <option id="11:00">11:00</option>
+                                    <option id="11:30">11:30</option>
+                                    <option id="12:00">12:00</option>
+                                    <option id="12:30">12:30</option>
+                                    <option disabled="true">Pauze</option>
+                                    <option id="14:00">14:00</option>
+                                    <option id="14:30">14:30</option>
+                                    <option id="15:00">15:00</option>
+                                    <option id="15:30">15:30</option>
+                                    <option id="16:00">16:00</option>
+                                    <option id="16:30">16:30</option>
+                                    <option id="17:00">17:00</option>
+                                    <option id="17:30">17:30</option>
+                                </select> <br> <br> <br> </td>
+                        </tr>
+                        <tr id="naam" style="display: none;">
+                            <td><label for="nameInput" class="Labels">Voornaam + achternaam: </label> <br> <br> <br>
+                            </td>
+                            <td><input type="name" class="inputs" required placeholder="Voornaam Achternaam" required
+                                    pattern="[a-zA-Z]+[ ][a-zA-Z]+" onchange="next()" id="naampie" name="naampie"> <br>
+                                <br>
+                                <br> </td>
+                        </tr>
+                        <tr id="mail" style="display: none;">
+                            <td><label for="mailInput" class="Labels">Email: </label> <br> <br> <br> </td>
+                            <td><input type="email" class="inputs" required placeholder="email@example.com"
+                                    onchange="next()" id="email" name="email"> <br> <br> <br> </td>
+                        </tr>
+                        <tr id="submit" style="display: none;">
+                            <td> <br> <br> <br> </td>
+                            <td><button id="submitBtn" class="afspraakButton" type="submit">Afspraak maken</button> <br>
+                                <br>
+                                <br> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="space"></div>
+            <script src="script/afspraak.js"></script>
+            <script src="script/dbScript.js"></script>
+            <link rel="stylesheet" href="style/afspraak.css">
+            <link rel="stylesheet" href="style/master.css">
+        </div>
+        <footer class="footer">
+            <p id="titel">Barbie Barbers - Koen Frankena ©2020</p>
+        </footer>
     </div>
-    <div class="divInputs">
-        <form method="POST" action="/reserveren">
-            <table class="inputsTable">
-                <tr id="datum" style="display: table;">
-                    <td><label for="datePicker" class="Labels">Datum: </label> <br> <br> <br> </td>
-                    <td><input onchange="next()" oninput="dbCheck()" type="date" class="inputs" id="vandaag"
-                            name="vandaag" required> <br> <br> <br> </td>
-                </tr>
-                <tr id="barber" style="display: none;">
-                    <td><label for="barberPicker" class="Labels">Voorkeur voor kapper: </label> <br> <br> <br> </td>
-                    <td><select class="inputs" onchange="next()" oninput="dbCheck()" required id="kappers"
-                            name="kappers">
-                            <option>Kies een kapper</option>
-                            <option id="ken">Ken</option>
-                            <option id="barbie">Barbie</option>
-                            <option id="samson">Samson</option>
-                            <option id="gert">Gert</option>
-                        </select> <br> <br> <br> </td>
-                </tr>
-                <tr id="time" style="display: none;">
-                    <td><label for="tijdenPicker">Tijd: </label> <br> <br> <br> </td>
-                    <td><select class="inputs" onchange="next()" required id="selectorTime" name="selectorTime">
-                            <option id="pickTime">Kies een tijd</option>
-                            <option id="9:00">9:00</option>
-                            <option id="9:30">9:30</option>
-                            <option id="10:00">10:00</option>
-                            <option id="10:30">10:30</option>
-                            <option id="11:00">11:00</option>
-                            <option id="11:30">11:30</option>
-                            <option id="12:00">12:00</option>
-                            <option id="12:30">12:30</option>
-                            <option disabled="true">Pauze</option>
-                            <option id="14:00">14:00</option>
-                            <option id="14:30">14:30</option>
-                            <option id="15:00">15:00</option>
-                            <option id="15:30">15:30</option>
-                            <option id="16:00">16:00</option>
-                            <option id="16:30">16:30</option>
-                            <option id="17:00">17:00</option>
-                            <option id="17:30">17:30</option>
-                        </select> <br> <br> <br> </td>
-                </tr>
-                <tr id="naam" style="display: none;">
-                    <td><label for="nameInput" class="Labels">Voornaam + achternaam: </label> <br> <br> <br> </td>
-                    <td><input type="name" class="inputs" required placeholder="Voornaam Achternaam" required
-                            pattern="[a-zA-Z]+[ ][a-zA-Z]+" onchange="next()" id="naampie" name="naampie"> <br> <br>
-                        <br> </td>
-                </tr>
-                <tr id="mail" style="display: none;">
-                    <td><label for="mailInput" class="Labels">Email: </label> <br> <br> <br> </td>
-                    <td><input type="email" class="inputs" required placeholder="email@example.com" onchange="next()"
-                            id="email" name="email"> <br> <br> <br> </td>
-                </tr>
-                <tr id="submit" style="display: none;">
-                    <td> <br> <br> <br> </td>
-                    <td><button id="submitBtn" class="afspraakButton" type="submit">Afspraak maken</button> <br> <br>
-                        <br> </td>
-                </tr>
-            </table>
-
-        </form>
-    </div>
-    <div class="footer">
-        <p id="titel">Barbie Barbers - Koen Frankena ©2020</p>
-    </div>
-    <script src="script/afspraak.js"></script>
-    <script src="script/dbScript.js"></script>
-    <link rel="stylesheet" href="style/afspraak.css">
-    <link rel="stylesheet" href="style/master.css">
 </body>
 
 </html>
