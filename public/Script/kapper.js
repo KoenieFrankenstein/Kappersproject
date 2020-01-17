@@ -4,6 +4,10 @@ function dbCheck() {
     fetch('/dbCheck')
         .then(v => v.json())
         .then(response => {
+
+            var tbl = document.getElementsByTagName('tbody')[0];
+            if (tbl) tbl.parentNode.removeChild(tbl);
+
             response = response.response;
 
             let afspraken = response;

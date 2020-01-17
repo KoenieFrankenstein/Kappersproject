@@ -23,16 +23,16 @@
                 <p class="intro" onclick="dbCheck()">Zoek naar de ingeplande afspraken!</p>
 
                 <table class="searchTable">
-                    <tr class="inputRow">
-                        <td class="inputTD">
+                    <thead class="inputRow">
+                        <th class="inputTD">
                             <label>Naam:</label>
                             <input type="text" class="input">
-                        </td>
-                        <td class="inputTD">
+                        </th>
+                        <th class="inputTD">
                             <label>Email:</label>
                             <input type="email" class="input">
-                        </td>
-                        <td class="inputTD">
+                        </th>
+                        <th class="inputTD">
                             <label>Kapper:</label>
                             <select class="input">
                                 <option id="ken">Ken</option>
@@ -40,19 +40,20 @@
                                 <option id="samson">Samson</option>
                                 <option id="gert">Gert</option>
                             </select>
-                        </td>
-                        <td class="inputTD">
+                        </th>
+                        <th class="inputTD">
                             <label>Datum:</label>
                             <input type="date" class="input">
-                        </td>
-                        <td class="inputTD">
+                        </th>
+                        <th class="inputTD">
                             <label>Tijd:</label>
                             <input type="time" class="input">
-                        </td>
-                    </tr>
+                        </th>
+                    </thead>
+                    <tbody>
                     <tr style="height: 10px;"></tr>
-                    <tr class="afsprakenRow" id="afsprakenRow">
-                    </tr>
+                    <tr class="afsprakenRow" id="afsprakenRow"></tr>
+                    </tbody>
                 </table>
             </div>
 
