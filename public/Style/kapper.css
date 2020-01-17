@@ -16,21 +16,24 @@
     margin-top: 20px;
     border-collapse: collapse;  
 }
-.inputRow{
-    padding-bottom: 3px;
-}
+/* .inputRow{ */
+/* } */
 .input{
     border: 2px solid rgb(255, 180, 40);
     border-radius: 7px;
     font-size: 25px;
     width: 50%;
+
+    margin-bottom: 5px;
 }
-/* .afsprakenRow{
-
-} */
+.afsprakenRow{
+    padding: 5px;
+}
 .inputTD{
-
     border-bottom: 2px solid rgb(255, 180, 40);
+}
+.afspraakTD{
+    padding-top: 5px;
 }
 td{
     width: 400px;

@@ -4,18 +4,18 @@ var db = NoSQL.load('./local.db.nosql');
 
 router.post('/reserveren', (req, res) => {
 
-    var vandaag = req.body.vandaag;
-    var kapper = req.body.kappers;
-    var tijd = req.body.selectorTime
     var naam = req.body.naampie;
     var email = req.body.email;
+    var kapper = req.body.kappers;
+    var vandaag = req.body.vandaag;
+    var tijd = req.body.selectorTim;
 
     db.insert({
-        datum: vandaag,
-        kapper: kapper,
-        tijd: tijd,
         naam: naam,
         email: email,
+        kapper: kapper,
+        datum: vandaag,
+        tijd: tijd,
     }); 
 
     res.redirect("/confirm.html?date=" + vandaag + "&barber=" + kapper + "&time=" + tijd + "&name=" + naam + "&email=" + email);

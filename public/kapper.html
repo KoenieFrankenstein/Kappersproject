@@ -20,7 +20,7 @@
 
             <div>
                 <br><br>
-                <p class="intro">Zoek naar de ingeplande afspraken!</p>
+                <p class="intro" onclick="dbCheck()">Zoek naar de ingeplande afspraken!</p>
 
                 <table class="searchTable">
                     <tr class="inputRow">
@@ -35,7 +35,6 @@
                         <td class="inputTD">
                             <label>Kapper:</label>
                             <select class="input">
-                                <option disabled>Kappers</option>
                                 <option id="ken">Ken</option>
                                 <option id="barbie">Barbie</option>
                                 <option id="samson">Samson</option>
@@ -46,20 +45,13 @@
                             <label>Datum:</label>
                             <input type="date" class="input">
                         </td>
+                        <td class="inputTD">
+                            <label>Tijd:</label>
+                            <input type="time" class="input">
+                        </td>
                     </tr>
-                    <tr class="afsprakenRow">
-                        <td>
-                            <label>Naam</label>
-                        </td>
-                        <td>
-                            <label>Email@email.com</label>
-                        </td>
-                        <td>
-                            <label>Kapper</label>
-                        </td>
-                        <td>
-                            <label>00-00-0000 | 00:00</label>
-                        </td>
+                    <tr style="height: 10px;"></tr>
+                    <tr class="afsprakenRow" id="afsprakenRow">
                     </tr>
                 </table>
             </div>

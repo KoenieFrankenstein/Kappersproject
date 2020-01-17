@@ -14,19 +14,20 @@ function dbCheck() {
             pickTime.selected = "Selected";
 
             selector.forEach(tijdenEnable);
+            timesArray.forEach(mijnfunctie);
+            response.forEach(myFunction);
+
             function tijdenEnable(value, index, array) {
                 timesArray.push(time.options[value].value);
             }
-            timesArray.forEach(mijnfunctie);
             function mijnfunctie(value, index, array) {
                 var eenTijd = document.getElementById(value);
                 eenTijd.disabled = false;
             }
-            response.forEach(myFunction);
-
+            
             function myFunction(value, index, array) {
-                console.log(value.datum + " " + value.kapper + " " + value.tijd);
-                console.log(value.datum, date);
+                // console.log(value.datum + " " + value.kapper + " " + value.tijd);
+                // console.log(value.datum, date);
                 if (value.datum == date) {
                     if (value.kapper == barber) {
                         tijdenArray.push(value.tijd);
@@ -35,6 +36,7 @@ function dbCheck() {
                     }
                 }
             }
+            //disable de tijden die bezet zijn
             function tijdenDisable(value, index, array) {
                 var Occupied = document.getElementById(value);
                 Occupied.setAttribute("disabled", true);
