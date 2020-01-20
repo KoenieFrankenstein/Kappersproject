@@ -31,7 +31,6 @@
 }
 .afsprakenBody{
     text-align: left;
-    
 }
 .inputTD{
     border-bottom: 2px solid rgb(255, 180, 40);
@@ -48,7 +47,6 @@ td{
     width: 15%;
     text-align: center;
     border-radius: 8px;
-    margin-left: 30px;
 
     font-family: sans-serif;
     font-weight: bold;

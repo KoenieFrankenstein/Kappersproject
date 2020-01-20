@@ -31,4 +31,35 @@ router.get('/dbCheck', (req, res) => {
     });
 });
 
+router.post('/zoeken', (req, res) => {
+
+    var naam = req.body.naam;
+    var email = req.body.email;
+    var kapper = req.body.kapper;
+    var datum = req.body.datum;
+    var tijd = req.body.tijd;
+    
+    db.find().make(function(filter) {
+        if (naam !== '') {
+            filter.where('name', '=', naam)
+        }
+        if (email !== '') {
+            filter.where('email', '=', email)
+        }
+        if (kapper !== 'Geen kapper gekozen') {
+            filter.where('chair', '=', kapper)
+        }
+        if (datum !== 'Geen datum gekozen') {
+            filter.where('date', '=', datum)
+        }
+        if (tijd !== 'Geen tijd gekozen') {
+            filter.where('time', '=', tijd)
+        }
+        filter.callback(function(err, response) {
+            res.json({ response })
+        });
+    });
+
+})
+
 module.exports = router;
