@@ -8,7 +8,7 @@ router.post('/reserveren', (req, res) => {
     var email = req.body.email;
     var kapper = req.body.kappers;
     var vandaag = req.body.vandaag;
-    var tijd = req.body.selectorTim;
+    var tijd = req.body.selectorTime;
 
     db.insert({
         naam: naam,

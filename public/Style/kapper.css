@@ -29,6 +29,10 @@
 .afsprakenRow{
     padding: 5px;
 }
+.afsprakenBody{
+    text-align: left;
+    
+}
 .inputTD{
     border-bottom: 2px solid rgb(255, 180, 40);
 }
@@ -36,5 +40,22 @@
     padding-top: 5px;
 }
 td{
-    width: 400px;
+    width: 20%;
+    padding-left: 10px;
+}
+.zoekBtn{
+    height: 30px;
+    width: 15%;
+    text-align: center;
+    border-radius: 8px;
+    margin-left: 30px;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(255, 180, 40);
+    color: #35424a;
+    border: none;
+    box-shadow: 0 3px rgb(192, 135, 28);
+    margin-bottom: 5px;
 }

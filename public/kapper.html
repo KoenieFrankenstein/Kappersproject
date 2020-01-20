@@ -18,41 +18,43 @@
                 <h3 class="link"><a class="link" href="index.html">Home</a></h3>
             </div>
 
-            <div>
-                <br><br>
+            <div style="text-align: center;">
+                <br>
+                <button class="zoekBtn" onclick="zoeken()" >Zoeken</button>
+                <br>
                 <p class="intro" onclick="dbCheck()">Zoek naar de ingeplande afspraken!</p>
 
                 <table class="searchTable">
                     <thead class="inputRow">
                         <th class="inputTD">
                             <label>Naam:</label>
-                            <input type="text" class="input">
+                            <input type="text" class="input" id="zoekName">
                         </th>
                         <th class="inputTD">
                             <label>Email:</label>
-                            <input type="email" class="input">
+                            <input type="email" class="input" id="zoekMail">
                         </th>
                         <th class="inputTD">
                             <label>Kapper:</label>
-                            <select class="input">
+                            <select class="input" id="zoekBarber">
                                 <option id="ken">Ken</option>
                                 <option id="barbie">Barbie</option>
                                 <option id="samson">Samson</option>
                                 <option id="gert">Gert</option>
                             </select>
                         </th>
-                        <th class="inputTD">
+                        <th class="inputTD" id="zoekDate">
                             <label>Datum:</label>
                             <input type="date" class="input">
                         </th>
-                        <th class="inputTD">
+                        <th class="inputTD" id="zoekTime">
                             <label>Tijd:</label>
                             <input type="time" class="input">
                         </th>
                     </thead>
-                    <tbody>
-                    <tr style="height: 10px;"></tr>
-                    <tr class="afsprakenRow" id="afsprakenRow"></tr>
+                    <tbody id="afsprakenBody" class="afsprakenBody">
+                        <tr style="height: 10px;"></tr>
+                        <tr class="afsprakenRow" id="afsprakenRow"></tr>
                     </tbody>
                 </table>
             </div>
