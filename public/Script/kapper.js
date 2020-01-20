@@ -33,23 +33,3 @@ function dbCheck() {
             
         });
 }
-function zoeken(){
-    var input = document.getElementById("zoekName");
-    var filter = input.value.toUpperCase();
-    var table = document.getElementById("searchTable");
-    var tr = document.getElementsByTagName("tr");
-    var td, i, txtValue;
-  
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-        } else {
-            tr[i].style.display = "none";
-        }
-        }
-    }
-    dbCheck()
-}
