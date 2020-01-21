@@ -39,7 +39,8 @@ function zoeken() {
             },
             body: JSON.stringify(data),
         })
-
+// function dbCheck() {
+    
         .then(v => v.json())
         .then(response => {
             

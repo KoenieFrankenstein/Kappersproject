@@ -24,14 +24,16 @@ router.post('/reserveren', (req, res) => {
 
 router.get('/dbCheck', (req, res) => {
     
+    
+});
+
+router.post('/zoeken', (req, res) => {
+
     db.find().make(function(filter) {
         filter.callback(function(err, response) {
             res.json({ response })
         });
     });
-});
-
-router.post('/zoeken', (req, res) => {
 
     var naam = req.body.naam;
     var email = req.body.email;
