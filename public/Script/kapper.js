@@ -6,8 +6,6 @@ var mail = document.getElementById('zoekMail');
 var datum = document.getElementById('zoekDate');
 var tijd = document.getElementById('zoekTime');
 
-// var resultaat = document.getElementById('resultaat');
-
 function zoeken() {
     
     //oude tabel weghalen
@@ -18,11 +16,11 @@ function zoeken() {
         elmtTable.removeChild(tableRows[x]);
     }
 
-    // var upperCaseName = naam.value;
-    // upperCaseName = upperCaseName.toLowerCase()
-    //     .split(' ')
-    //     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-    //     .join(' ');
+    var upperCaseName = naam.value;
+    upperCaseName = upperCaseName.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
 
     const data = {
         naam: naam.value,
@@ -58,7 +56,7 @@ function zoeken() {
                 }
             }
             let table = document.querySelector("table");
-            let data = Object.keys(afspraken[0]);
+            // let data = Object.keys(afspraken[0]);
             generateTable(table, afspraken);
             
         });

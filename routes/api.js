@@ -4,7 +4,13 @@ var db = NoSQL.load('./local.db.nosql');
 
 router.post('/reserveren', (req, res) => {
 
-    var naam = req.body.naampie;
+    var upperCaseName = req.body.naampie;
+    upperCaseName = upperCaseName.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+
+    var naam = upperCaseName;
     var email = req.body.email;
     var kapper = req.body.kappers;
     var vandaag = req.body.vandaag;
@@ -41,19 +47,19 @@ router.post('/zoeken', (req, res) => {
     
     db.find().make(function(filter) {
         if (naam !== '') {
-            filter.where('name', '=', naam)
+            filter.where('naam', '=', naam)
         }
         if (email !== '') {
             filter.where('email', '=', email)
         }
         if (kapper !== 'Geen kapper gekozen') {
-            filter.where('chair', '=', kapper)
+            filter.where('kapper', '=', kapper)
         }
         if (datum !== '') {
-            filter.where('date', '=', datum)
+            filter.where('datum', '=', datum)
         }
         if (tijd !== '') {
-            filter.where('time', '=', tijd)
+            filter.where('tijd', '=', tijd)
         }
         filter.callback(function(err, response) {
             res.json({ response })
