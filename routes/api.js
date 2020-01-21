@@ -2,6 +2,15 @@ const router = require('express').Router();
 var NoSQL = require('nosql');
 var db = NoSQL.load('./local.db.nosql');
 
+router.get('/dbCheck', (req, res) => {
+    
+    db.find().make(function(filter) {
+        filter.callback(function(err, response) {
+            res.json({ response })
+        });
+     });
+ });
+ 
 router.post('/reserveren', (req, res) => {
 
     var upperCaseName = req.body.naampie;
