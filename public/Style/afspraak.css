@@ -35,10 +35,10 @@ label{
 .afspraakButton{
     height: 30px;
     width: 70%;
-    text-align: center;
-    border-radius: 8px;
     margin-left: 30px;
 
+    text-align: center;
+    border-radius: 8px;
     font-family: sans-serif;
     font-weight: bold;
     font-size: 20px;
