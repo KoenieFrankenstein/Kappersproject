@@ -16,12 +16,6 @@ function zoeken() {
         elmtTable.removeChild(tableRows[x]);
     }
 
-    var upperCaseName = naam.value;
-    upperCaseName = upperCaseName.toLowerCase()
-        .split(' ')
-        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
-
     const data = {
         naam: naam.value,
         email: mail.value,

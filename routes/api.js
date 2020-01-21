@@ -9,7 +9,6 @@ router.post('/reserveren', (req, res) => {
         .split(' ')
         .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
         .join(' ');
-
     var naam = upperCaseName;
     var email = req.body.email;
     var kapper = req.body.kappers;
@@ -23,28 +22,16 @@ router.post('/reserveren', (req, res) => {
         datum: vandaag,
         tijd: tijd,
     }); 
-
     res.redirect("/confirm.html?date=" + vandaag + "&barber=" + kapper + "&time=" + tijd + "&name=" + naam + "&email=" + email);
-
 })
 
-// router.get('/dbCheck', (req, res) => {
-// });
-
 router.post('/zoeken', (req, res) => {
-
-    // db.find().make(function(filter) {
-    //     filter.callback(function(err, response) {
-    //         res.json({ response })
-    //     });
-    // });
 
     var naam = req.body.naam;
     var email = req.body.email;
     var kapper = req.body.kapper;
     var datum = req.body.datum;
     var tijd = req.body.tijd;
-    
     db.find().make(function(filter) {
         if (naam !== '') {
             filter.where('naam', '=', naam)
@@ -65,7 +52,5 @@ router.post('/zoeken', (req, res) => {
             res.json({ response })
         });
     });
-
 })
-
 module.exports = router;
