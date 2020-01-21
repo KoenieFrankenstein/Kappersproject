@@ -53,4 +53,15 @@ router.post('/zoeken', (req, res) => {
         });
     });
 })
+router.post('/logIn', (req, res) => {
+    var password = req.body.password;
+    if(password === 'Kapper!'){
+        password = "Correct password"
+        res.json({ password })
+       
+    }else{
+        console.log('wrong password');
+    }
+})
+
 module.exports = router;

@@ -17,12 +17,24 @@
                 <h3 class="link"><a class="link" href="prijzen.html">Prijzen</a></h3>
                 <h3 class="link"><a class="link" href="index.html">Home</a></h3>
             </div>
-
-            <div style="text-align: center;">
+            <!-- Inlog div -->
+            <div id="passwordDiv">
+                <p class="inlogP">U kunt hier inloggen met het wachtwoord van de kapper:</p>
+                <div class="innerDiv">
+                    <br>
+                    <label class="inlogP">Password:</label>
+                    <input type="password" placeholder="Wachtwoord" id="passwordInput" class="passwordInput">
+                    <br>
+                </div>
+                <input type="submit" id="logIn" onclick="password()" class="inputBtn">
+            </div>
+            <!-- Zoek div -->
+            <div style="text-align: center;" hidden id="zoekDiv">
                 <br>
-                <button class="zoekBtn" onclick="zoeken()" >Zoeken</button>
+                <button class="zoekBtn" onclick="zoeken()">Zoeken</button>
                 <br>
-                <p class="intro">Zoek naar de ingeplande afspraken!</p>
+                <p class="intro">Zoek naar de ingeplande afspraken! (Halve namen/emails geven geen juist zoekresultaat)
+                </p>
 
                 <table class="searchTable">
                     <thead class="inputRow">
@@ -54,15 +66,13 @@
                         </th>
                     </thead>
                     <tr>
-                        <tr style="height: 10px;"></tr>
+                    <tr style="height: 10px;"></tr>
                     </tr>
                     <tbody id="afsprakenBody" class="afsprakenBody">
                         <tr class="afsprakenRow" id="afsprakenRow"></tr>
                     </tbody>
                 </table>
             </div>
-
-
         </div>
         <div class="space"></div>
         <div>
