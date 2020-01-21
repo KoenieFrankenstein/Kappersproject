@@ -22,18 +22,16 @@ router.post('/reserveren', (req, res) => {
 
 })
 
-router.get('/dbCheck', (req, res) => {
-    
-    
-});
+// router.get('/dbCheck', (req, res) => {
+// });
 
 router.post('/zoeken', (req, res) => {
 
-    db.find().make(function(filter) {
-        filter.callback(function(err, response) {
-            res.json({ response })
-        });
-    });
+    // db.find().make(function(filter) {
+    //     filter.callback(function(err, response) {
+    //         res.json({ response })
+    //     });
+    // });
 
     var naam = req.body.naam;
     var email = req.body.email;
@@ -51,10 +49,10 @@ router.post('/zoeken', (req, res) => {
         if (kapper !== 'Geen kapper gekozen') {
             filter.where('chair', '=', kapper)
         }
-        if (datum !== 'Geen datum gekozen') {
+        if (datum !== '') {
             filter.where('date', '=', datum)
         }
-        if (tijd !== 'Geen tijd gekozen') {
+        if (tijd !== '') {
             filter.where('time', '=', tijd)
         }
         filter.callback(function(err, response) {

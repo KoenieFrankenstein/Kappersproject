@@ -1,4 +1,4 @@
-var afspraken = [{}]
+var afspraken = [];
 
 var naam = document.getElementById('zoekName');
 var kapper = document.getElementById('zoekBarber');
@@ -6,7 +6,7 @@ var mail = document.getElementById('zoekMail');
 var datum = document.getElementById('zoekDate');
 var tijd = document.getElementById('zoekTime');
 
-var resultaat = document.getElementById('resultaat');
+// var resultaat = document.getElementById('resultaat');
 
 function zoeken() {
     
@@ -18,14 +18,14 @@ function zoeken() {
         elmtTable.removeChild(tableRows[x]);
     }
 
-    var upperCaseName = naam.value;
-    upperCaseName = upperCaseName.toLowerCase()
-        .split(' ')
-        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
+    // var upperCaseName = naam.value;
+    // upperCaseName = upperCaseName.toLowerCase()
+    //     .split(' ')
+    //     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    //     .join(' ');
 
     const data = {
-        naam: upperCaseName,
+        naam: naam.value,
         email: mail.value,
         kapper: kapper.value,
         datum: datum.value,
@@ -33,7 +33,7 @@ function zoeken() {
     }
 
     fetch('/zoeken', {
-            method: 'POST', // or 'PUT'
+            method: 'POST', // or 'PUT'nse
             headers: {
                 'Content-Type': 'application/json',
             },
