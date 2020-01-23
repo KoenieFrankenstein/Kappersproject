@@ -67,9 +67,9 @@ router.post('/logIn', (req, res) => {
     if(password === 'Kapper!'){
         password = "Correct password"
         res.json({ password })
-       
     }else{
-        console.log('wrong password');
+        password = 'Wrong password';
+        res.json({ password })
     }
 })
 

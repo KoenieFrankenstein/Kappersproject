@@ -17,7 +17,7 @@ function password() {
             if (password == 'Correct password') {
                 document.getElementById('passwordDiv').style.display = 'none';
                 document.getElementById('zoekDiv').style.display = 'block';
-            }else{
+            }else if (password == "Wrong password") {
                 alert("Het wachtwoord is incorrect. Probeer het opnieuw.")
             }
         })
