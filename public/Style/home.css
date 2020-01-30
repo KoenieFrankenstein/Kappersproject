@@ -20,6 +20,11 @@
     margin-left: 200px;
     margin-Right: 200px;
 }
+.pDiv{
+    width: 56%;
+    margin-right: 60%;
+    margin-left: 0%;
+}
 .imgDiv{
     margin-left: 0.5%;
 }
